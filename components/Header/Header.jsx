@@ -1,25 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import css from './Header.module.scss'
-import { BiPhoneCall } from 'react-icons/bi'
+import { BiPhoneCall, BiMenuAltRight } from 'react-icons/bi'
 import {motion} from 'framer-motion'
-import { headerVariants } from '../../src/utils/motion'
+import { getMenuStyles, headerVariants } from '../../src/utils/motion'
+import useHeaderShadow from '../../src/hooks/useHeaderShadow'
 
 
 const Header = () => {
+
+  const [menuOpened, setMenuOpened] = useState(false);
+  const headerShadow = useHeaderShadow();
+
   return (
     <motion.div 
     initial= "hidden"
     whileInView = "show"
     variants={headerVariants}
     viewport={{once: false, amount: 0.25}}
-    className={`paddings ${css.wrapper}`}>
+    className={`paddings ${css.wrapper}`}
+    style={{boxShadow:headerShadow}}
+    >
 
       <div className={`flexCenter innerWidth ${css.container}`}>
 
         <div className={css.name}>
           Issa
         </div>
-        <ul className= {`flexCenter ${css.menu}`}>
+        <ul className= {`flexCenter ${css.menu}`}
+        style={getMenuStyles(menuOpened)}>
           <li><a href="">Service</a></li>
           <li><a href="">Experience</a></li>
           <li><a href="">Portfolio</a></li>
@@ -29,8 +37,15 @@ const Header = () => {
             <BiPhoneCall size={'40px'} color='var(--blue)' />
             </li>
         </ul>
+
+        {/* For medium and small screens */}
+
+        <div className={`${css.menuIcon}`} 
+        onClick={() => setMenuOpened((prev) => !prev)}>
+          <BiMenuAltRight size={'30px'} />
+        </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
