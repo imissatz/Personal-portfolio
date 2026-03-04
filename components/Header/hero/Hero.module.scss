@@ -1,0 +1,30 @@
+@import '../../../src/styles/constants.scss';
+
+.wrapper{
+    position: relative;
+    z-index: 1;
+    
+    .upperElements{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .lowerElements{
+        margin-top: 12rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+
+        .experience{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            >:nth-child(2){
+                line-height: 25px;
+            }
+        }
+    }
+
+}

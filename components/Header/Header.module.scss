@@ -49,6 +49,14 @@
             gap: 1.5rem;
             cursor: pointer;
 
+             .menuIcon {
+                        display: none;   // hidden on desktop
+                        cursor: pointer;
+
+                        @media (max-width: $md) {
+                                display: block;   // show on small screens
+                        }
+                     }
             li{
                 a{
                     color: inherit;
