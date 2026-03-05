@@ -26,8 +26,10 @@ const Header = () => {
         <div className={css.name}>
           Issa
         </div>
-        <ul className= {`flexCenter ${css.menu}`}
-        style={getMenuStyles(menuOpened)}>
+        <ul 
+        style={getMenuStyles(menuOpened)}
+        className= {`flexCenter ${css.menu}`}
+        >
           <li><a href="">Service</a></li>
           <li><a href="">Experience</a></li>
           <li><a href="">Portfolio</a></li>

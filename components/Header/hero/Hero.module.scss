@@ -1,4 +1,4 @@
-@import '../../../src/styles/constants.scss';
+@use '../../../src/styles/constants.scss' as *;
 
 .wrapper{
     position: relative;

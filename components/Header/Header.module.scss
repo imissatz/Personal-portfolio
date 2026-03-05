@@ -1,7 +1,6 @@
-@import '../../src/styles/constants.scss';
+@use '../../src/styles/constants.scss' as *;
 
 .wrapper{
-
     position: relative;
     z-index:99;
     opacity:1;
@@ -38,6 +37,8 @@
                 border-radius: 2rem;
                 transition: all 300ms ease;
                 align-items: flex-start;  
+                padding: 3rem;
+                justify-content: flex-end;
                 box-shadow: 0px 4px 4px (0,0,0,0.05)          
 
             }
@@ -49,14 +50,6 @@
             gap: 1.5rem;
             cursor: pointer;
 
-             .menuIcon {
-                        display: none;   // hidden on desktop
-                        cursor: pointer;
-
-                        @media (max-width: $md) {
-                                display: block;   // show on small screens
-                        }
-                     }
             li{
                 a{
                     color: inherit;
@@ -81,6 +74,15 @@
 
                 }
             }
+
+             .menuIcon {
+                        display: none;   // hidden on desktop
+                        cursor: pointer;
+
+                        @media (max-width: $md) {
+                                display: block;   // show on small screens
+                        }
+                     }
         }
     }
 }
