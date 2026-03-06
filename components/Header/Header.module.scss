@@ -21,13 +21,19 @@
 
         .menu{
 
-            @media (max-width: $sm), (max-width: $md){
+            text-transform: uppercase;
+            font-size: 1rem;
+            list-style: none;
+            gap: 1.5rem;
+            cursor: pointer;
+
+            @media (max-width: $md){
                 position: absolute;
                 list-style: none;
                 gap: 2rem;
                 font-weight: 500;
                 flex-direction: column;
-                right:0;
+                right:-100%;
                 top: 3rem;
                 width: 50%;
                 min-width: 15rem;
@@ -39,16 +45,8 @@
                 align-items: flex-start;  
                 padding: 3rem;
                 justify-content: flex-end;
-                box-shadow: 0px 4px 4px (0,0,0,0.05)          
-
+                box-shadow: 0px 4px 4px rgba(0,0,0,0.05)          
             }
-
-
-            text-transform: uppercase;
-            font-size: 1rem;
-            list-style: none;
-            gap: 1.5rem;
-            cursor: pointer;
 
             li{
                 a{
@@ -74,15 +72,14 @@
 
                 }
             }
-
-             .menuIcon {
-                        display: none;   // hidden on desktop
-                        cursor: pointer;
-
-                        @media (max-width: $md) {
-                                display: block;   // show on small screens
-                        }
-                     }
         }
+        .menuIcon {
+                    display: none;   // hidden on desktop
+                    cursor: pointer;
+
+                    @media (max-width: $md) {
+                            display: block;   // show on small screens
+                        }
+                 }
     }
 }

@@ -1,5 +1,5 @@
 import Header from "../components/Header/Header";
-import Hero from "../components/Header/hero/Hero";
+import Hero from "../components/hero/Hero";
 import css from "./styles/app.module.scss";
 
 const App = () => {

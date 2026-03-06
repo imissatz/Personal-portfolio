@@ -148,12 +148,6 @@ export const staggerChildren = {
 export const getMenuStyles = (menuOpened) => {
   if (document.documentElement.clientWidth <= 640) {
     return { 
-      right: menuOpened ? "0" : "-300%",
-      transition: "right 0.3s ease", 
-    };
-  }
-
-  return{
-    right:"0",
+      right: menuOpened ? "0" : "-300%"};
   }
 };
