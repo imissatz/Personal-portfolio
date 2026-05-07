@@ -2,7 +2,7 @@ import React from 'react'
 import css from './Expertise.module.scss'
 import { projectExperience, WhatDoIHelp } from '../../src/utils/data'
 import { motion } from 'framer-motion'
-import { staggerContainer } from '../../src/utils/motion'
+import { fadeIn, staggerContainer, textVariant } from '../../src/utils/motion'
 
 const Expertise = () => {
   return (
@@ -17,8 +17,12 @@ const Expertise = () => {
 
                 {
                    projectExperience.map((exp, i)=>{
-                    return <div className={css.exp} key={i}>
-                        <div className="flexCenter" style={{background: exp.bg}}>
+                    return ( 
+                    <motion.div 
+                    variants={fadeIn("right", "tween", (i+1)*0.2, 1)}
+                    className={css.exp} key={i}>
+                        <div 
+                        className="flexCenter" style={{background: exp.bg}}>
                           <exp.icon size={25} color="white"/>  
                         </div>
                         <div>
@@ -26,12 +30,15 @@ const Expertise = () => {
                         <span className='secondaryText'>{exp.projects} Projects</span>
                     </div>
 
-                    </div>
+                    </motion.div>
+                    );
                    })
                 }
 
             </div>
-             <div className={css.rightSide}>
+             <motion.div 
+             variants={textVariant(0.5)}
+             className={css.rightSide}>
             <span className="primaryText">What do I help?</span>
             {
                 WhatDoIHelp.map((paragraph, i)=> {
@@ -51,7 +58,7 @@ const Expertise = () => {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
         </div>
 
        
