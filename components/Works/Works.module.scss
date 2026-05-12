@@ -33,6 +33,8 @@
                 flex-direction: column;
                 gap: 1.4rem;
                 left: 45%;
+                transform: translateX(-50%);
+                align-items: center;
                 
                 .line{
                     position: absolute;
@@ -42,6 +44,22 @@
                     background-position: right;
                     background-size: 2px 30px;
                     background-repeat: repeat-y;
+                    left: 48%;
+                    z-index: 1;
+                    border-radius: 5px;
+                }
+
+                >div{
+                    flex: 1;
+                    padding-top: .8rem;
+                    z-index: 2;
+
+                    .circle{
+                        border-radius: 50%;
+                        background: black;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                    }
 
                 }
             }

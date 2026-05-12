@@ -5,7 +5,7 @@ import { fadeIn, slideIn, staggerContainer } from "../../src/utils/motion"
 
 const Hero = () => {
   return (
-<section className={`padding ${css.wrapper}`}>
+<section className={`paddings ${css.wrapper}`}>
     <motion.div 
     variants={staggerContainer}
     initial="hidden"
@@ -29,7 +29,9 @@ const Hero = () => {
       </div>
 
       {/* Person Image */}
-      <motion.div className={css.person}>
+      <motion.div
+      variants={fadeIn("up", "tween", 0.3,1)} 
+      className={css.person}>
         <motion.img
         variants={slideIn("up", "tween", 0.5, 1.3)} 
         src='./person.png' alt="" />
@@ -65,5 +67,5 @@ const Hero = () => {
   )
     }
 
-        export default Hero
+        export default Hero;
         

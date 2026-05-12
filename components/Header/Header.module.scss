@@ -2,12 +2,13 @@
 
 .wrapper{
     position: relative;
+    background: rgb(241, 241, 241);
     z-index:99;
     opacity:1;
     transform: none;
     position: sticky;
     top: 0;
-    transition: all 300ms ease-in-out;
+    transition: all 300ms ease;
 
     .container{
         position: relative;
