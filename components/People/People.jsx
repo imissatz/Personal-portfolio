@@ -2,6 +2,8 @@ import React from 'react'
 import css from './People.module.scss'
 import { motion } from 'framer-motion'
 import { staggerChildren } from '../../src/utils/motion'
+import Slider from 'react-slick'
+
 
 const People = () => {
   return (
@@ -19,7 +21,7 @@ const People = () => {
           <span className="primaryText">
             People Talk about us
           </span>
-          <p style={{marginTop:"2rem"}}>
+          <p style={{ marginTop: "2rem" }}>
             I got a job that was in accordance with the salary and field of work
           </p>
           <p>
@@ -27,6 +29,42 @@ const People = () => {
           </p>
 
         </div>
+
+
+        {/* Carousel */}
+
+        <div className={`yPaddings ${css.comments}`}>
+          <Slider 
+          {...sliderSettings}
+          className={css.slider}
+          >
+            {
+              comments.map((comment, i) =>{
+                return (
+                  <div className={`flexCenter ${css.comment}`}>
+                    <img src={comment.img} alt='' />
+                    <p>{comment.comment}</p>
+
+                    <div className={css.line}>
+                    </div>
+
+                    <div className={css.bio}>
+                      <span>{comment.name}</span>
+                      <span>{comment.post}</span>
+                    </div>
+                  </div>
+
+
+                )
+              } )
+            }
+          </Slider>
+        </div>
+
+
+
+
+
       </div>
 
 

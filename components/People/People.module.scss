@@ -1,5 +1,17 @@
 @import '../../src/styles/constants.scss';
 
 .wrapper{
+    .container{
+        .heading{
+            flex-direction: column;
+            p{
+                line-height: 30px;
+            }
+        }
+
+        .comment{
+            box-shadow: rgba(0, 0, 0);
+        }
+    }
     
 }
