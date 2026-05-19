@@ -14,6 +14,8 @@ const Works = () => {
             initial="hidden"
             whileInView="show"
             className={`paddings ${`flexCenter innerWidth ${css.wrapper}`}`}>
+
+            <a className="anchor" id="work"></a>
             <div className={css.container}>
                 <span className="primaryText">My Work Experience</span>
 

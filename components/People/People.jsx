@@ -1,8 +1,9 @@
 import React from 'react'
 import css from './People.module.scss'
 import { motion } from 'framer-motion'
-import { staggerChildren } from '../../src/utils/motion'
+import { footerVariants, staggerChildren } from '../../src/utils/motion'
 import Slider from 'react-slick'
+import { comments, sliderSettings } from "../../src/utils/data"
 
 
 const People = () => {
@@ -14,8 +15,10 @@ const People = () => {
       viewport={{ once: false, amount: 0.25 }}
       className={`paddings ${css.wrapper}`}>
 
-
-      <div className={`yPaddings innerWidth ${css.container}`}>
+      <a className="anchor" id="people"></a>
+      <div
+        variants={footerVariants}
+        className={`yPaddings innerWidth ${css.container}`}>
         <div className={`flexCenter ${css.heading}`}>
 
           <span className="primaryText">
@@ -33,13 +36,15 @@ const People = () => {
 
         {/* Carousel */}
 
-        <div className={`yPaddings ${css.comments}`}>
-          <Slider 
-          {...sliderSettings}
-          className={css.slider}
+        <motion.div
+          variants={footerVariants}
+          className={`yPaddings ${css.comments}`}>
+          <Slider
+            {...sliderSettings}
+            className={css.slider}
           >
             {
-              comments.map((comment, i) =>{
+              comments.map((comment, i) => {
                 return (
                   <div className={`flexCenter ${css.comment}`}>
                     <img src={comment.img} alt='' />
@@ -56,10 +61,10 @@ const People = () => {
 
 
                 )
-              } )
+              })
             }
           </Slider>
-        </div>
+        </motion.div>
 
 
 
